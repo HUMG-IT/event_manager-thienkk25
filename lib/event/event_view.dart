@@ -7,7 +7,8 @@ import 'event_model.dart';
 import 'event_service.dart';
 
 class EventView extends StatefulWidget {
-  const EventView({super.key});
+  final Function(Locale) onLocaleChange;
+  const EventView({super.key, required this.onLocaleChange});
 
   @override
   State<EventView> createState() => _EventViewState();
@@ -15,6 +16,7 @@ class EventView extends StatefulWidget {
 
 class _EventViewState extends State<EventView> {
   final eventSerice = EventService();
+
   List<EventModel> items = [];
   final calendarController = CalendarController();
   @override
@@ -38,6 +40,32 @@ class _EventViewState extends State<EventView> {
       appBar: AppBar(
         title: Text(al!.appTitle),
         actions: [
+          PopupMenuButton<String>(
+            onSelected: (languageCode) {
+              if (languageCode == 'vi') {
+                widget.onLocaleChange(const Locale('vi'));
+              } else {
+                widget.onLocaleChange(const Locale('en'));
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'vi',
+                child: ListTile(
+                  leading: Icon(Icons.language),
+                  title: Text("Tiếng Việt"),
+                ),
+              ),
+              const PopupMenuItem(
+                value: 'en',
+                child: ListTile(
+                  leading: Icon(Icons.language),
+                  title: Text("English"),
+                ),
+              ),
+            ],
+            icon: const Icon(Icons.translate),
+          ),
           PopupMenuButton<CalendarView>(
             onSelected: (value) {
               setState(() {
