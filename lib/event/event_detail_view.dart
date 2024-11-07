@@ -57,6 +57,7 @@ class _EventDetailViewState extends State<EventDetailView> {
   Future<void> _saveEvent() async {
     widget.event.subject = subjectController.text;
     widget.event.notes = notesController.text;
+    await eventService.saveEvent(widget.event);
     if (!mounted) return;
     Navigator.of(context).pop(true);
   }
@@ -124,18 +125,18 @@ class _EventDetailViewState extends State<EventDetailView> {
                 const SizedBox(
                   height: 24,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    if (widget.event.id != null)
-                      FilledButton.tonalIcon(
-                          onPressed: _deleteEvent,
-                          label: const Text('Xoá sự kiện')),
-                    FilledButton.icon(
-                        onPressed: _saveEvent, label: const Text('Lưu sự kiện'))
-                  ],
-                )
-              ]
+              ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  if (widget.event.id != null)
+                    FilledButton.tonalIcon(
+                        onPressed: _deleteEvent,
+                        label: const Text('Xoá sự kiện')),
+                  FilledButton.icon(
+                      onPressed: _saveEvent, label: const Text('Lưu sự kiện'))
+                ],
+              )
             ],
           ),
         ),
