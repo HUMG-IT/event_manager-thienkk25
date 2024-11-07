@@ -48,7 +48,8 @@ class _EventViewState extends State<EventView> {
               return PopupMenuItem<CalendarView>(
                   value: view,
                   child: ListTile(
-                    title: Text(view.name),
+                    leading: getCalendarViewIcon(view),
+                    title: Text(getVietnameseCalendarViewName(view)),
                   ));
             }).toList(),
             icon: getCalendarViewIcon(calendarController.view!),
@@ -72,7 +73,7 @@ class _EventViewState extends State<EventView> {
             final newEvent = EventModel(
               startTime: details.date!,
               endTime: details.date!.add(const Duration(hours: 1)),
-              subject: 'Sự kiện mới',
+              subject: al.newEvent,
             );
 
             Navigator.of(context).push(
@@ -119,6 +120,32 @@ class _EventViewState extends State<EventView> {
         return const Icon(Icons.schedule_outlined);
       default:
         return const Icon(Icons.calendar_today_outlined);
+    }
+  }
+
+  String getVietnameseCalendarViewName(CalendarView view) {
+    final al = AppLocalizations.of(context);
+    switch (view) {
+      case CalendarView.day:
+        return al!.day;
+      case CalendarView.week:
+        return al!.week;
+      case CalendarView.workWeek:
+        return al!.workWeek;
+      case CalendarView.month:
+        return al!.month;
+      case CalendarView.schedule:
+        return al!.schedule;
+      case CalendarView.timelineDay:
+        return al!.timelineDay;
+      case CalendarView.timelineWeek:
+        return al!.timelineWeek;
+      case CalendarView.timelineWorkWeek:
+        return al!.timelineWorkWeek;
+      case CalendarView.timelineMonth:
+        return al!.timelineMonth;
+      default:
+        return al!.unknown;
     }
   }
 }

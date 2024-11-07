@@ -82,13 +82,13 @@ class _EventDetailViewState extends State<EventDetailView> {
             children: [
               TextField(
                 controller: subjectController,
-                decoration: const InputDecoration(labelText: 'Tên sự kiện'),
+                decoration: InputDecoration(labelText: al.eventName),
               ),
               const SizedBox(
                 height: 16,
               ),
               ListTile(
-                title: const Text("Sự kiện cả ngày"),
+                title: Text(al.allDayEvent),
                 trailing: Switch(
                     value: widget.event.isAllDay,
                     onChanged: (value) {
@@ -102,8 +102,8 @@ class _EventDetailViewState extends State<EventDetailView> {
                   height: 16,
                 ),
                 ListTile(
-                  title:
-                      Text('Bắt đầu: ${widget.event.formatedStartTimeString}'),
+                  title: Text(
+                      '${al.start}: ${widget.event.formatedStartTimeString}'),
                   trailing: const Icon(Icons.calendar_today_outlined),
                   onTap: () => _pickDateTime(isStart: true),
                 ),
@@ -112,14 +112,13 @@ class _EventDetailViewState extends State<EventDetailView> {
                 ),
                 ListTile(
                   title:
-                      Text('Kết thúc: ${widget.event.formatedEndTimeString}'),
+                      Text('${al.end}: ${widget.event.formatedEndTimeString}'),
                   trailing: const Icon(Icons.calendar_today_outlined),
                   onTap: () => _pickDateTime(isStart: false),
                 ),
                 TextField(
                   controller: notesController,
-                  decoration:
-                      const InputDecoration(labelText: "Ghi chú sự kiện"),
+                  decoration: InputDecoration(labelText: al.eventNotes),
                   maxLines: 3,
                 ),
                 const SizedBox(
@@ -131,10 +130,9 @@ class _EventDetailViewState extends State<EventDetailView> {
                 children: [
                   if (widget.event.id != null)
                     FilledButton.tonalIcon(
-                        onPressed: _deleteEvent,
-                        label: const Text('Xoá sự kiện')),
+                        onPressed: _deleteEvent, label: Text(al.deleteEvent)),
                   FilledButton.icon(
-                      onPressed: _saveEvent, label: const Text('Lưu sự kiện'))
+                      onPressed: _saveEvent, label: Text(al.saveEvent))
                 ],
               )
             ],

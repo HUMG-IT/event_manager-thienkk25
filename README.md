@@ -86,6 +86,6 @@ Khi bạn đã hoàn thành bài tập và tất cả các kiểm thử đều t
 
 Chúc bạn may mắn với bài tập!
 
-
-Đây là kết quả của dự án:
+---
+## Đây là kết quả của dự án:
 ![Ketqua](./lib/images/Ketqua.png)

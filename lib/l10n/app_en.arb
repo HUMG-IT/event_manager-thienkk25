@@ -1,5 +1,23 @@
 {
     "appTitle": "Event Manger",
     "addEvent": "Add Event",
-    "evenDetail": "Event Detail"
+    "evenDetail": "Event Detail",
+    "eventName": "Event Name",
+    "newEvent": "New event",
+    "allDayEvent": "All Day Event",
+    "eventNotes": "Event Notes",
+    "saveEvent": "Save",
+    "deleteEvent": "Delete",
+    "start": "Start",
+    "end": "End",
+    "day": "Day",
+    "week": "Week",
+    "workWeek": "Work Week",
+    "month": "Month",
+    "schedule": "Schedule",
+    "timelineDay": "TimelineDay",
+    "timelineWeek": "TimelineWeek",
+    "timelineWorkWeek": "TimelineWorkWeek",
+    "timelineMonth": "TimelineMonth",
+    "unknown": "Unknown"
 }

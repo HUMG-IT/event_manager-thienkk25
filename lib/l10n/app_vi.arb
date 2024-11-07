@@ -1,5 +1,22 @@
 {
     "appTitle": "Quản lý sự kiện",
     "addEvent": "Thêm sự kiện",
-    "evenDetail": "Chi tiết sự kiện"
+    "evenDetail": "Chi tiết sự kiện",
+    "eventName": "Tên sự kiện",
+    "newEvent": "Sự kiện mới",
+    "allDayEvent": "Sự kiện cả ngày",
+    "eventNotes": "Ghi chú sự kiện",
+    "saveEvent": "Lưu sự kiện",
+    "deleteEvent": "Xoá sự kiện",
+    "start": "Bắt đầu",
+    "end": "kết thúc",
+    "week": "Tuần",
+    "workWeek": "Tuần làm việc",
+    "month": "Tháng",
+    "schedule": "Lịch biểu",
+    "timelineDay": "Dòng thời gian ngày",
+    "timelineWeek": "Dòng thời gian tuần",
+    "timelineWorkWeek": "Dòng thời gian tuần làm việc",
+    "timelineMonth": "Dòng thời gian tháng",
+    "unknown": "Không xác định"
 }
