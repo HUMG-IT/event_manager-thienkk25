@@ -10,18 +10,27 @@ void main() {
   testWidgets(
       'EventView hiển thị danh sách sự kiện và tương tác với người dùng',
       (WidgetTester tester) async {
+    // ignore: unused_local_variable, no_leading_underscores_for_local_identifiers
+    Locale _locale = const Locale('vi'); // Mặc định là tiếng Việt
+
+    // Hàm thay đổi ngôn ngữ
+    // ignore: no_leading_underscores_for_local_identifiers
+    void _changeLanguage(Locale locale) {
+      _locale = locale; // Cập nhật ngôn ngữ
+    }
+
     // Xây dựng ứng dụng
     await tester.pumpWidget(
-      const MaterialApp(
-        localizationsDelegates: [
+      MaterialApp(
+        localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [Locale('en'), Locale('vi')],
-        locale: Locale('vi'),
-        home: EventView(),
+        supportedLocales: const [Locale('en'), Locale('vi')],
+        locale: const Locale('vi'),
+        home: EventView(onLocaleChange: _changeLanguage),
       ),
     );
 
