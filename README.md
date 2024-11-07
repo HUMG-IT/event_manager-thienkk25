@@ -3,9 +3,9 @@
 # Bài kiểm tra giữa kỳ - Bài 1
 - **Môn học:** Phát triển ứng dụng di động đa nền tảng 1
 - **Giảng viên:** GVC.TS. Trần Trung Chuyên
-- **Sinh viên:** 
-- **Mã sinh viên:** 
-- **Lớp:**
+- **Sinh viên:** Nguyễn Văn Thiện
+- **Mã sinh viên:** 2121051573
+- **Lớp:** DCCTCT66_05A
 - **Đề tài:** Xây dựng và kiểm thử ứng dụng Quản lý sự kiện
 
 Chào mừng bạn đến với dự án Quản lý sự kiện! Tệp README này sẽ hướng dẫn bạn hoàn thành bài tập.
@@ -85,3 +85,7 @@ flutter test
 Khi bạn đã hoàn thành bài tập và tất cả các kiểm thử đều thành công, hãy commit và push mã nguồn của mình lên Github. Bạn có thể kiểm tra kết quả kiểm thử trên tab Actions của repository. Nếu Status là Success, nghĩa la bạn đã hoàn thành bài tập.
 
 Chúc bạn may mắn với bài tập!
+
+
+Đây là kết quả của dự án:
+![Ketqua](./lib/images/Ketqua.png)
